@@ -1,0 +1,10 @@
+{
+  "description": "Explore a responsive publishing prototype designed for enterprise software insights, featuring indexed navigation and long-form reading for optimal user engagement.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

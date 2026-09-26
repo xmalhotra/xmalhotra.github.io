@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600&family=IBM+Plex+Serif:ital,wght@0,400&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', ui-serif, Georgia, serif;
+
+  --color-paper: #f3f4ef;
+  --color-card: #fafbf7;
+  --color-ink: #151a17;
+  --color-ink-muted: #626b64;
+  --color-sidebar: #101411;
+  --color-green: #1e6b47;
+  --color-green-soft: #dde7e0;
+  --color-green-chip: #dde7e0;
+  --color-border: #c9cec8;
+  --color-light: #f4f7f3;
+  --color-light-muted: #dde7e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* ───────────────────────────────────────────
+   MOTION
+   ─────────────────────────────────────────── */
+
+/* Page transitions */
+.page-enter {
+  animation: page-in 220ms ease-out both;
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Branded loader */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--color-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: loader-reveal 480ms ease-out both;
+}
+@keyframes loader-reveal {
+  0%   { opacity: 0; }
+  12%  { opacity: 1; }
+  78%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.loader-gm {
+  animation: loader-gm-in 150ms ease-out 60ms both;
+}
+@keyframes loader-gm-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.loader-line-stroke {
+  stroke-dasharray: 64;
+  stroke-dashoffset: 64;
+  animation: loader-line-draw 260ms ease-out 110ms both;
+}
+@keyframes loader-line-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Micro-interactions — base transitions (below Tailwind utilities in cascade) */
+@layer base {
+  button {
+    transition:
+      color 150ms ease,
+      background-color 150ms ease,
+      opacity 150ms ease,
+      border-color 150ms ease,
+      transform 150ms ease,
+      box-shadow 150ms ease;
+  }
+  a {
+    transition: color 150ms ease, opacity 150ms ease;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--color-green);
+    outline-offset: 2px;
+  }
+}
+
+/* Card hover lift — targets editorial card buttons only */
+button.bg-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* City band illustration */
+.city-band-svg {
+  display: block;
+  width: 100%;
+  height: clamp(56px, 7vw, 88px);
+}
+
+/* Reduced-motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+  .loader-overlay,
+  .loader-gm,
+  .loader-line-stroke {
+    animation: none !important;
+  }
+}
