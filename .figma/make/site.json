@@ -1,7 +1,8 @@
 {
-  "description": "Explore a responsive publishing prototype designed for enterprise software insights, featuring indexed navigation and long-form reading for optimal user engagement.",
+  "title": "Gaurav Malhotra — Technical Journal",
+  "description": "Gaurav Malhotra is a tech lead working across enterprise software, Guidewire, and AI-enabled engineering. Notes on systems, delivery, and applied AI.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
