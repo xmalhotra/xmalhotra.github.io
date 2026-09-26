@@ -109,10 +109,128 @@ button.bg-card:hover {
   height: clamp(56px, 7vw, 88px);
 }
 
+/* ───────────────────────────────────────────
+   MOBILE FUTURISTIC MOTION
+   ─────────────────────────────────────────── */
+
+/* Shared premium easing */
+:root {
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Crisp, confident page transition on small screens — no blur */
+@media (max-width: 1023px) {
+  .page-enter {
+    animation: page-in-mobile 500ms var(--ease-out-quint) both;
+  }
+  @keyframes page-in-mobile {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+}
+
+/* Page exit — quick, confident fade-up before the swap */
+.page-exit {
+  animation: page-out 200ms var(--ease-out-quint) both;
+}
+@keyframes page-out {
+  from { opacity: 1; transform: translateY(0);    }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+/* Hero heading — word-by-word reveal on load */
+.word-reveal {
+  display: inline-block;
+  animation: word-in 640ms var(--ease-out-quint) both;
+}
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(0.4em); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+/* Scroll-reveal — applied on mobile via App effect */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: opacity, transform;
+}
+.reveal-in {
+  animation: reveal-up 620ms var(--ease-out-quint) both;
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Tactile press feedback — touch devices only */
+@media (hover: none) {
+  button:active {
+    transform: scale(0.985);
+  }
+  button.bg-card:active,
+  button.bg-sidebar:active {
+    transform: scale(0.985);
+  }
+}
+
+/* Bottom-sheet dialog */
+.sheet-backdrop {
+  animation: backdrop-in 260ms ease-out both;
+  backdrop-filter: blur(3px);
+}
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.sheet-panel {
+  animation: sheet-up 480ms var(--ease-out-quint) both;
+}
+@keyframes sheet-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@media (min-width: 640px) {
+  .sheet-panel {
+    animation: sheet-pop 340ms var(--ease-out-quint) both;
+  }
+  @keyframes sheet-pop {
+    from { opacity: 0; transform: translateY(12px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+  }
+}
+
+/* Mobile INDEX menu — clip reveal + staggered rows */
+.menu-panel {
+  animation: menu-clip 320ms var(--ease-out-quint) both;
+  overflow: hidden;
+}
+@keyframes menu-clip {
+  from { opacity: 0; clip-path: inset(0 0 100% 0); }
+  to   { opacity: 1; clip-path: inset(0 0 0 0);    }
+}
+.menu-row {
+  animation: menu-row-in 380ms var(--ease-out-quint) both;
+}
+@keyframes menu-row-in {
+  from { opacity: 0; transform: translateX(-14px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
 /* Reduced-motion overrides */
 @media (prefers-reduced-motion: reduce) {
-  .page-enter {
-    animation: none;
+  .page-enter,
+  .page-exit,
+  .word-reveal,
+  .reveal-in,
+  .sheet-panel,
+  .sheet-backdrop,
+  .menu-panel,
+  .menu-row {
+    animation: none !important;
+  }
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
   }
   .loader-overlay,
   .loader-gm,

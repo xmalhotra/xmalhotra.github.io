@@ -49,7 +49,7 @@ export default function Home({ navigate }: Props) {
         <main className="flex-1 flex flex-col">
 
           {/* ── Top bar ── */}
-          <div className="flex items-center justify-between px-7 lg:px-12 py-5 border-b border-border">
+          <div className="flex items-center justify-between px-5 sm:px-10 lg:px-18 py-5 border-b border-border">
             <span className="font-sans font-semibold text-[12px] text-ink tracking-[0.04em]">ENTERPRISE ENGINEERING × AI</span>
             <span className="font-sans font-normal text-[12px] text-ink-muted hidden sm:block">
               Selected writing · Current experiments · About
@@ -57,7 +57,7 @@ export default function Home({ navigate }: Props) {
           </div>
 
           {/* ── Hero ── */}
-          <section className="flex flex-col gap-5 px-7 lg:px-12 py-12 lg:py-14 bg-paper">
+          <section className="flex flex-col gap-5 px-5 sm:px-10 lg:px-18 py-12 lg:py-14 bg-paper">
             <SectionLabel label="WELCOME" />
             <h1 className="font-sans font-semibold text-ink leading-[1.25] text-[36px] sm:text-[48px] lg:text-[58px] max-w-5xl">
               I build large enterprise systems — and study how AI changes the way we build them.
@@ -134,7 +134,7 @@ export default function Home({ navigate }: Props) {
           </section>
 
           {/* ── Three focus tracks ── */}
-          <section className="flex flex-col gap-6 px-7 lg:px-12 py-12 lg:py-14 bg-paper">
+          <section className="flex flex-col gap-6 px-5 sm:px-10 lg:px-18 py-12 lg:py-14 bg-paper">
             <SectionLabel label="PRIMARILY FOCUSED ON" />
             <h2 className="font-sans font-semibold text-ink leading-[1.25] text-[28px] lg:text-[38px]">
               Three tracks that sharpen each other.
@@ -178,7 +178,7 @@ export default function Home({ navigate }: Props) {
           </section>
 
           {/* ── Metrics ── */}
-          <section className="flex flex-col gap-6 px-7 lg:px-12 py-12 lg:py-14 bg-green-soft">
+          <section className="flex flex-col gap-6 px-5 sm:px-10 lg:px-18 py-12 lg:py-14 bg-green-soft">
             <SectionLabel label="BY THE NUMBERS" />
             <h2 className="font-sans font-semibold text-ink leading-[1.25] text-[28px] lg:text-[36px]">
               The work, counted instead of over-described.
@@ -199,7 +199,7 @@ export default function Home({ navigate }: Props) {
           </section>
 
           {/* ── Selected Work ── */}
-          <section className="flex flex-col gap-5 px-7 lg:px-12 py-12 lg:py-14 bg-paper">
+          <section className="flex flex-col gap-5 px-5 sm:px-10 lg:px-18 py-12 lg:py-14 bg-paper">
             <SectionLabel label="SELECTED WORK" />
             <h2 className="font-sans font-semibold text-ink leading-[1.25] text-[28px] lg:text-[38px]">
               Enterprise systems, expressed as problems solved.
@@ -223,7 +223,7 @@ export default function Home({ navigate }: Props) {
           </section>
 
           {/* ── AI Practice ── */}
-          <section className="bg-sidebar flex flex-col gap-6 px-7 lg:px-12 py-12 lg:py-14">
+          <section className="bg-sidebar flex flex-col gap-6 px-5 sm:px-10 lg:px-18 py-12 lg:py-14">
             <SectionLabel label="AI IS PART OF HOW I WORK" />
             <h2 className="font-sans font-semibold text-light leading-[1.25] text-[28px] lg:text-[38px] max-w-4xl">
               Not a novelty. A daily engineering practice.
@@ -265,7 +265,7 @@ export default function Home({ navigate }: Props) {
           {/* ── Profile + Contact split ── */}
           <div className="flex flex-col lg:flex-row">
             {/* Profile */}
-            <section className="flex flex-col gap-4 px-7 lg:px-12 py-12 lg:py-14 bg-paper flex-1">
+            <section className="flex flex-col gap-4 px-5 sm:px-10 lg:px-18 py-12 lg:py-14 bg-paper flex-1">
               <SectionLabel label="PROFILE" />
               <h2 className="font-sans font-semibold text-ink leading-[1.25] text-[24px] lg:text-[31px] max-w-lg">
                 Tech Lead building enterprise software — and an evolving body of work on AI-enabled engineering.
@@ -282,7 +282,7 @@ export default function Home({ navigate }: Props) {
             </section>
 
             {/* Contact */}
-            <section className="bg-green flex flex-col gap-4 px-7 lg:px-12 py-12 lg:py-14 lg:w-[480px] shrink-0">
+            <section className="bg-green flex flex-col gap-4 px-5 sm:px-10 lg:px-18 py-12 lg:py-14 lg:w-[480px] shrink-0">
               <p className="font-sans font-semibold text-[11px] text-light uppercase tracking-[0.04em]">CONTACT</p>
               <h2 className="font-sans font-semibold text-light leading-[1.25] text-[22px] lg:text-[28px] max-w-sm">
                 Let's talk enterprise systems, AI workflows, or technical consulting.

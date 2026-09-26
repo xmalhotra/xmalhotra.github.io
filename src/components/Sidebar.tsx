@@ -30,10 +30,17 @@ export default function Sidebar({ activePage, navigate }: Props) {
             <button
               key={item.index}
               onClick={() => navigate(item.page)}
-              className={`flex gap-3 h-10 items-center px-3 py-2 rounded-lg w-full text-left transition-colors ${
-                isActive ? 'bg-paper' : 'bg-paper hover:bg-green-soft'
+              aria-current={isActive ? 'page' : undefined}
+              className={`relative flex gap-3 h-10 items-center px-3 py-2 rounded-lg w-full text-left bg-paper transition-colors active:scale-[0.98] ${
+                isActive ? '' : 'hover:bg-green-soft'
               }`}
             >
+              <span
+                aria-hidden="true"
+                className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3px] rounded-full bg-green transition-all duration-300 ${
+                  isActive ? 'h-5 opacity-100' : 'h-0 opacity-0'
+                }`}
+              />
               <span className={`font-sans font-semibold text-[11px] ${isActive ? 'text-green' : 'text-ink-muted'}`}>
                 {item.index}
               </span>

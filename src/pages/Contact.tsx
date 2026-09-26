@@ -17,7 +17,7 @@ export default function Contact({ navigate }: Props) {
           <div className="flex flex-col lg:flex-row flex-1">
 
             {/* Left: context */}
-            <div className="flex flex-col gap-6 px-7 lg:px-12 py-12 lg:py-16 flex-1">
+            <div className="flex flex-col gap-6 px-5 sm:px-10 lg:px-18 py-12 lg:py-16 flex-1">
               <SectionLabel label="CONTACT" />
               <h1 className="font-sans font-semibold text-ink leading-[1.15] text-[34px] sm:text-[44px] lg:text-[52px] max-w-xl">
                 Let's talk enterprise systems, AI workflows, or technical consulting.
@@ -56,7 +56,7 @@ export default function Contact({ navigate }: Props) {
             </div>
 
             {/* Right: green panel */}
-            <div className="bg-green flex flex-col gap-6 px-7 lg:px-12 py-12 lg:py-16 lg:w-[440px] shrink-0">
+            <div className="bg-green flex flex-col gap-6 px-5 sm:px-10 lg:px-18 py-12 lg:py-16 lg:w-[440px] shrink-0">
               <p className="font-sans font-semibold text-[11px] text-light uppercase tracking-[0.04em]">WHAT TO REACH OUT ABOUT</p>
               <div className="flex flex-col gap-5">
                 {[
@@ -84,7 +84,7 @@ export default function Contact({ navigate }: Props) {
           </div>
 
           {/* Bottom strip */}
-          <div className="bg-green-soft flex flex-col sm:flex-row items-start sm:items-center justify-end gap-4 px-7 lg:px-12 py-6">
+          <div className="bg-green-soft flex flex-col sm:flex-row items-start sm:items-center justify-end gap-4 px-5 sm:px-10 lg:px-18 py-6">
             <div className="flex gap-5">
               <button
                 onClick={() => navigate('work')}
